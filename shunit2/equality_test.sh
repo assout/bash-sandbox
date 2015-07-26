@@ -2,9 +2,10 @@ testEquality() {
 	assertEquals 1 1
 }
 
-testEqualityFail() {
-	assertEquals 1 2
-}
+# failTest
+# testEqualityFail() {
+# 	assertEquals 1 2
+# }
 
 # load shunit2 TODO workaround for travisci
 # . shunit2-2.1.6/src/shunit2
