@@ -15,5 +15,7 @@ for shunit2Path in ${shunit2Paths[@]} ; do
 	fi
 done
 echo "shunit2 Not found" >&2
+echo `pwd`
+ls -l
 exit 1
 
