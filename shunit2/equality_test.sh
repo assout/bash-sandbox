@@ -7,7 +7,7 @@ testEqualityFail() {
 }
 
 # load shunit2 TODO workaround for travisci
-shunit2Paths=("shunit2-2.1.6/src/shunit2", "/usr/share/shunit2/shunit2")
+shunit2Paths=("../shunit2-2.1.6/src/shunit2", "/usr/share/shunit2/shunit2")
 for shunit2Path in ${shunit2Paths[@]} ; do
 	if [ -e ${shunit2Path} ] ; then
 		. ${shunit2Path}
@@ -16,6 +16,6 @@ for shunit2Path in ${shunit2Paths[@]} ; do
 done
 echo "shunit2 Not found" >&2
 echo `pwd`
-ls -l
+ls -lR
 exit 1
 
