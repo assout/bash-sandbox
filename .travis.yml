@@ -2,7 +2,7 @@ language: bash
 
 before_script:
     - mkdir -p /usr/share
-    - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx -C /usr/share/
+    - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | sudo tar zx -C /usr/share/
 
 script:
     - bash shunit2/equality_test.sh
