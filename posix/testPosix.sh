@@ -1,9 +1,12 @@
 # checkbashisms testPosix.sh
 
-array=()
-array+="a"
-array+="b"
-echo ${array[@]}
+# Valid #
+echo "abc"
 
-set -o posix
-echo ${array[@]}
+# Invalid #
+
+# array=()
+# array+="a"
+# array+="b"
+# echo ${array[@]}
+
