@@ -14,7 +14,7 @@ script:
     # Static tests
     - checkbashisms ./posix/testPosix.sh
     - bashate ./posix/testPosix.sh
-    - shellcheck ./posix/testPosix.sh
+    - ~/.cabal/bin/shellcheck ./posix/testPosix.sh
 
     # Unit tests
     - bash ./shunit2/equality_test.sh
