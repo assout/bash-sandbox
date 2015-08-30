@@ -2,9 +2,12 @@ language: bash
 install:
     - sudo apt-get -qq update
     - sudo apt-get -qq install devscripts
-    # TODO travis上では取得できない
-    - sudo apt-get -qq install shellcheck
     - sudo pip install bashate
+
+      # TODO travis上ではapt-getで取得できない
+    - sudo apt-get -qq install cabal-install
+    - cabal update
+    - cabal install shellcheck
 before_script:
     - curl -L "https://shunit2.googlecode.com/files/shunit2-2.1.6.tgz" | tar zx
 script:
