@@ -1,9 +1,10 @@
+#!/bin/bash
 # checkbashisms testPosix.sh
 
 # Valid #
 echo "abc"
 
-echo $(ls)
+# echo $(ls)
 
 # Invalid #
 
