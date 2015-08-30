@@ -3,7 +3,7 @@ install:
     - sudo apt-get -qq update
     - sudo apt-get -qq install devscripts
     # TODO travis上では取得できない
-    # - sudo apt-get -qq install shellcheck
+    - sudo apt-get -qq install shellcheck
     - sudo pip install bashate
 before_script:
     - curl -L "https://shunit2.googlecode.com/files/shunit2-2.1.6.tgz" | tar zx
@@ -11,5 +11,7 @@ script:
     # Static tests
     - checkbashisms ./posix/testPosix.sh
     - bashate ./posix/testPosix.sh
+    - shellcheck ./posix/testPosix.sh
+
     # Unit tests
     - bash ./shunit2/equality_test.sh
