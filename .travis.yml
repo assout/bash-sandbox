@@ -4,21 +4,16 @@ before_install:
     - sudo apt-get update -qq
 install:
     - sudo apt-get -qq install devscripts
-    - sudo pip install bashate
-      # TODO travis上ではapt-getで取得できない
-    # - sudo apt-get -qq install cabal-install
     - sudo apt-get -qq install shellcheck
-
-    # - cabal update
-    # - cabal install shellcheck
+    - sudo pip install bashate
 before_script:
     - curl -L "https://shunit2.googlecode.com/files/shunit2-2.1.6.tgz" | tar zx
 script:
-    # Static tests
+    # Syntax tests
     - checkbashisms ./posix/testPosix.sh
     - bashate ./posix/testPosix.sh
-    # - ~/.cabal/bin/shellcheck ./posix/testPosix.sh
     - shellcheck ./posix/testPosix.sh
 
     # Unit tests
     - bash ./shunit2/equality_test.sh
+
