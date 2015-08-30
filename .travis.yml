@@ -1,19 +1,25 @@
-language: bash
-before_install:
-    - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ trusty-backports restricted main universe"
-    - sudo apt-get update -qq
-install:
-    - sudo apt-get -qq install devscripts
-    - sudo apt-get -qq install shellcheck
-    - sudo pip install bashate
-before_script:
-    - curl -L "https://shunit2.googlecode.com/files/shunit2-2.1.6.tgz" | tar zx
-script:
-    # Syntax tests
-    - checkbashisms ./posix/testPosix.sh
-    - bashate ./posix/testPosix.sh
-    - shellcheck ./posix/testPosix.sh
+language: ruby
+cache:
+  apt: true
 
-    # Unit tests
-    - bash ./shunit2/equality_test.sh
+before_install:
+  - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ trusty-backports restricted main universe"
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get -qq install devscripts
+  - sudo apt-get -qq install shellcheck
+  - sudo pip install bashate
+
+before_script:
+  - curl -L "https://shunit2.googlecode.com/files/shunit2-2.1.6.tgz" | tar zx
+
+script:
+  # Syntax tests
+  - checkbashisms ./posix/testPosix.sh
+  - bashate ./posix/testPosix.sh
+  - shellcheck ./posix/testPosix.sh
+
+  # Unit tests
+  - bash ./shunit2/equality_test.sh
 
